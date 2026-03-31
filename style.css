@@ -13,7 +13,7 @@ body {
     position: relative;
 }
 
-/* 2. タロットカードが落ちるアニメーション */
+/* 2. タロットカードが落ちるアニメーション設定 */
 .card {
     position: fixed;
     top: -150px;
@@ -25,40 +25,38 @@ body {
     opacity: 0;
     pointer-events: none;
     animation: card-fall linear infinite;
-    z-index: 1; /* 背景と文字の間に配置 */
-    
-    /* カードに少し影をつけて立体感を出す */
+    z-index: 1;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     border-radius: 5px;
 }
 
-/* ★ここにアップロードした画像のファイル名を指定します★ */
+/* ★アップロードした画像名に合わせてカードを割り当て★ */
 .card1 { 
-    background-image: url('card1.png'); /* 1枚目の画像 */
+    background-image: url('tarot1.png'); 
     left: 10%; animation-duration: 18s; animation-delay: 0s; 
 }
 .card2 { 
-    background-image: url('card2.png'); /* 2枚目の画像 */
+    background-image: url('tarot2.png'); 
     left: 35%; animation-duration: 25s; animation-delay: 5s; 
 }
 .card3 { 
-    background-image: url('card3.png'); /* 3枚目の画像 */
+    background-image: url('tarot3.png'); 
     left: 65%; animation-duration: 20s; animation-delay: 2s; 
 }
 .card4 { 
-    background-image: url('card4.png'); /* 4枚目の画像 */
+    background-image: url('tarot4.png'); 
     left: 85%; animation-duration: 28s; animation-delay: 8s; 
 }
 
-/* カードが落ちる魔法（アニメーション） */
+/* カードがひらひらと回転しながら落ちる魔法 */
 @keyframes card-fall {
     0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.7; } /* 少し薄暗くして背景に馴染ませる */
+    10% { opacity: 0.7; }
     90% { opacity: 0.7; }
-    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } /* 2回転しながら落ちる */
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
 }
 
-/* 3. ヘッダー */
+/* 3. ヘッダー（タイトル部分） */
 header {
     background: rgba(255, 255, 255, 0.15);
     text-align: center;
@@ -70,7 +68,7 @@ header {
 
 h1 { color: #8a6c22; font-size: 2.2rem; text-shadow: 0 0 15px #fff; }
 
-/* 4. メニューセクション */
+/* 4. メニューセクション（読みやすく半透明に） */
 section { max-width: 800px; margin: 30px auto; padding: 0 20px; position: relative; z-index: 10; }
 .menu-item {
     background: rgba(255, 255, 255, 0.5);
@@ -83,7 +81,7 @@ section { max-width: 800px; margin: 30px auto; padding: 0 20px; position: relati
 
 h2 { text-align: center; color: #8a6c22; border-bottom: 2px solid #8a6c22; padding-bottom: 10px; margin-bottom: 30px; }
 
-/* 5. 予約ボタン */
+/* 5. 予約ボタン（一番目立つように） */
 button { 
     display: block; width: 300px; max-width: 90%; margin: 40px auto; padding: 20px; 
     background: linear-gradient(45deg, #d4af37, #f9f1c0); color: #4a3410; 
