@@ -1,64 +1,79 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【原タロー】タロット個人鑑定</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* 1. 全体の背景：黄金の雲海を復活 */
+body {
+    background-image: url('image_5.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #4a3410;
+    font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    overflow-x: hidden;
+    position: relative;
+}
 
-    <div class="card card1"></div>
-    <div class="card card2"></div>
-    <div class="card card3"></div>
-    <div class="card card4"></div>
+/* 2. タロットカードが落ちるアニメーション */
+.card {
+    position: fixed;
+    top: -150px;
+    width: 70px;  /* 少し小ぶりに調整 */
+    height: 110px;
+    background: rgba(255, 215, 0, 0.2); /* 画像がない時の予備色 */
+    border: 1px solid rgba(138, 108, 34, 0.5);
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    animation: card-fall linear infinite;
+    z-index: 1; /* 背景と文字の間に配置 */
+}
 
-    <header>
-        <h1>【原タロー】タロット個人鑑定</h1>
-        <p>あなたの心の声に耳を傾け、進むべき未来を照らします。</p>
-    </header>
+/* カードの位置と速さをバラバラにする */
+.card1 { left: 10%; animation-duration: 15s; animation-delay: 0s; }
+.card2 { left: 35%; animation-duration: 22s; animation-delay: 5s; }
+.card3 { left: 65%; animation-duration: 18s; animation-delay: 2s; }
+.card4 { left: 85%; animation-duration: 25s; animation-delay: 8s; }
 
-    <section id="menu">
-        <h2>鑑定メニュー</h2>
-        <div class="menu-item">
-            <h3>🔮 タロット個人鑑定 30分</h3>
-            <p>料金：4,000円</p>
-            <p>ポイントを絞って、最大5項目までテンポよく占いたい方に。</p>
-        </div>
-        <div class="menu-item">
-            <h3>🔮 タロット個人鑑定 45分</h3>
-            <p>料金：5,500円</p>
-            <p>複雑な悩みや、じっくり深い対話を希望される方に。</p>
-        </div>
-        <div class="menu-item">
-            <h3>✨ 【オプション】霊視鑑定</h3>
-            <p>追加料金：＋1,500円</p>
-            <p>お相手の本心や魂のメッセージをより深く視通します。</p>
-        </div>
-    </section>
+@keyframes card-fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
 
-    <section id="guide">
-        <h2>鑑定までの流れ</h2>
-        <div class="menu-item">
-            <p><b>1. 予約サイトから申し込み</b><br>
-            下のボタンよりご希望のコースと日時を選択してください。</p>
-            <p><b>2. 振込先のご案内</b><br>
-            予約完了後の自動メールにて、<b>銀行振込先</b>と<b>公式LINE</b>をご案内いたします。</p>
-            <p><b>3. お支払いと確定</b><br>
-            鑑定の前日までにお振込をお願いします。</p>
-        </div>
-    </section>
+/* 3. ヘッダー */
+header {
+    background: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 80px 20px;
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 10;
+}
 
-    <section id="contact">
-        <p style="text-align: center;">＼ 空き状況の確認・お申し込みはこちら ／</p>
-        <button type="button" onclick="window.open('https://barataroo.stores.jp/reserve/054b78a355de3d268de4', '_blank')">
-            鑑定を申し込む（予約サイトへ）
-        </button>
-    </section>
+h1 { color: #8a6c22; font-size: 2.2rem; text-shadow: 0 0 15px #fff; }
 
-    <footer>
-        &copy; 2026 原タロー タロット個人鑑定
-    </footer>
+/* 4. メニューセクション */
+section { max-width: 800px; margin: 30px auto; padding: 0 20px; position: relative; z-index: 10; }
+.menu-item {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(138, 108, 34, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
 
-</body>
-</html>
+h2 { text-align: center; color: #8a6c22; border-bottom: 2px solid #8a6c22; padding-bottom: 10px; margin-bottom: 30px; }
+
+/* 5. 予約ボタン */
+button { 
+    display: block; width: 300px; max-width: 90%; margin: 40px auto; padding: 20px; 
+    background: linear-gradient(45deg, #d4af37, #f9f1c0); color: #4a3410; 
+    font-weight: bold; font-size: 1.2rem; border: none; border-radius: 50px; 
+    cursor: pointer; box-shadow: 0 8px 20px rgba(138, 108, 34, 0.4); transition: 0.3s;
+}
+button:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(212, 175, 55, 0.8); }
+
+footer { text-align: center; padding: 40px; color: #8a6c22; font-size: 0.8rem; }
