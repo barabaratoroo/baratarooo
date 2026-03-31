@@ -28,25 +28,23 @@ body {
     z-index: 1;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     border-radius: 5px;
-    /* もし画像が読み込めなかった時のための予備色 */
-    background-color: rgba(255, 255, 255, 0.2); 
 }
 
-/* ★個別の画像指定（GitHubのファイル名と1文字でも違うと白くなります） */
+/* ★GitHubに合わせて「.PNG」を大文字に直しました★ */
 .card1 { 
-    background-image: url('tarot1.png'); 
+    background-image: url('tarot1.PNG'); 
     left: 10%; animation-duration: 18s; animation-delay: 0s; 
 }
 .card2 { 
-    background-image: url('tarot2.png'); 
+    background-image: url('tarot2.PNG'); 
     left: 35%; animation-duration: 25s; animation-delay: 5s; 
 }
 .card3 { 
-    background-image: url('tarot3.png'); 
+    background-image: url('tarot3.PNG'); 
     left: 65%; animation-duration: 20s; animation-delay: 2s; 
 }
 .card4 { 
-    background-image: url('tarot4.png'); 
+    background-image: url('tarot4.PNG'); 
     left: 85%; animation-duration: 28s; animation-delay: 8s; 
 }
 
