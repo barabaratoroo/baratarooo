@@ -1,4 +1,4 @@
-/* 1. 全体の背景：黄金の雲海を復活 */
+/* 1. 全体の背景：黄金の雲海 */
 body {
     background-image: url('image_5.png'); 
     background-size: cover;
@@ -17,29 +17,45 @@ body {
 .card {
     position: fixed;
     top: -150px;
-    width: 70px;  /* 少し小ぶりに調整 */
-    height: 110px;
-    background: rgba(255, 215, 0, 0.2); /* 画像がない時の予備色 */
-    border: 1px solid rgba(138, 108, 34, 0.5);
-    border-radius: 5px;
-    backdrop-filter: blur(2px);
+    width: 80px;  /* カードの横幅 */
+    height: 130px; /* カードの縦幅 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     opacity: 0;
     pointer-events: none;
     animation: card-fall linear infinite;
     z-index: 1; /* 背景と文字の間に配置 */
+    
+    /* カードに少し影をつけて立体感を出す */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 5px;
 }
 
-/* カードの位置と速さをバラバラにする */
-.card1 { left: 10%; animation-duration: 15s; animation-delay: 0s; }
-.card2 { left: 35%; animation-duration: 22s; animation-delay: 5s; }
-.card3 { left: 65%; animation-duration: 18s; animation-delay: 2s; }
-.card4 { left: 85%; animation-duration: 25s; animation-delay: 8s; }
+/* ★ここにアップロードした画像のファイル名を指定します★ */
+.card1 { 
+    background-image: url('card1.png'); /* 1枚目の画像 */
+    left: 10%; animation-duration: 18s; animation-delay: 0s; 
+}
+.card2 { 
+    background-image: url('card2.png'); /* 2枚目の画像 */
+    left: 35%; animation-duration: 25s; animation-delay: 5s; 
+}
+.card3 { 
+    background-image: url('card3.png'); /* 3枚目の画像 */
+    left: 65%; animation-duration: 20s; animation-delay: 2s; 
+}
+.card4 { 
+    background-image: url('card4.png'); /* 4枚目の画像 */
+    left: 85%; animation-duration: 28s; animation-delay: 8s; 
+}
 
+/* カードが落ちる魔法（アニメーション） */
 @keyframes card-fall {
     0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.5; }
-    90% { opacity: 0.5; }
-    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    10% { opacity: 0.7; } /* 少し薄暗くして背景に馴染ませる */
+    90% { opacity: 0.7; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } /* 2回転しながら落ちる */
 }
 
 /* 3. ヘッダー */
