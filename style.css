@@ -1,0 +1,119 @@
+/* 1. 全体の背景：黄金の雲海 */
+body {
+    background-image: url('image_5.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* スクロールしても背景を固定 */
+    
+    color: #4a3410;
+    font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. 黄金の羽のアニメーション */
+.feather {
+    position: fixed;
+    background-image: url('feather_transparent.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    pointer-events: none;
+    animation: feather-float linear infinite;
+    z-index: 1;
+}
+
+.feather1 { width: 60px; height: 60px; left: 10%; animation-duration: 15s; animation-delay: 0s; }
+.feather2 { width: 90px; height: 90px; left: 30%; animation-duration: 20s; animation-delay: 5s; }
+.feather3 { width: 50px; height: 50px; left: 60%; animation-duration: 12s; animation-delay: 2s; }
+.feather4 { width: 70px; height: 70px; left: 80%; animation-duration: 18s; animation-delay: 8s; }
+
+@keyframes feather-float {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* 3. ヘッダー */
+header {
+    background: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    color: #8a6c22;
+    font-size: 2.2rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    margin-bottom: 10px;
+}
+
+/* 4. メニューとセクション */
+section { 
+    max-width: 800px; 
+    margin: 30px auto; 
+    padding: 20px; 
+    z-index: 10; 
+    position: relative; 
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(138, 108, 34, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+h2 { 
+    text-align: center; 
+    color: #8a6c22; 
+    border-bottom: 2px solid #8a6c22; 
+    padding-bottom: 10px; 
+    margin-bottom: 30px; 
+}
+
+h3 {
+    margin-top: 0;
+    color: #8a6c22;
+}
+
+/* 5. 予約ボタン */
+button { 
+    display: block; 
+    width: 320px; 
+    max-width: 90%;
+    margin: 40px auto; 
+    padding: 20px; 
+    background: linear-gradient(45deg, #d4af37, #f9f1c0); 
+    color: #4a3410; 
+    font-weight: bold; 
+    font-size: 1.3rem; 
+    border: none; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    box-shadow: 0 8px 20px rgba(138, 108, 34, 0.4); 
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+button:hover { 
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.9); 
+    transform: scale(1.05) translateY(-5px); 
+}
+
+/* スマホ用の調整 */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    header { padding: 60px 15px; }
+    section { padding: 15px; }
+    button { font-size: 1.1rem; width: 280px; }
+}
