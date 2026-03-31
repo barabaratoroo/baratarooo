@@ -13,12 +13,12 @@ body {
     position: relative;
 }
 
-/* 2. タロットカードが落ちるアニメーション設定 */
+/* 2. タロットカードの設定（共通） */
 .card {
     position: fixed;
     top: -150px;
-    width: 80px;  /* カードの横幅 */
-    height: 130px; /* カードの縦幅 */
+    width: 80px;  /* カードの幅 */
+    height: 130px; /* カードの高さ */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -28,9 +28,11 @@ body {
     z-index: 1;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     border-radius: 5px;
+    /* もし画像が読み込めなかった時のための予備色 */
+    background-color: rgba(255, 255, 255, 0.2); 
 }
 
-/* ★アップロードした画像名に合わせてカードを割り当て★ */
+/* ★個別の画像指定（GitHubのファイル名と1文字でも違うと白くなります） */
 .card1 { 
     background-image: url('tarot1.png'); 
     left: 10%; animation-duration: 18s; animation-delay: 0s; 
@@ -48,15 +50,15 @@ body {
     left: 85%; animation-duration: 28s; animation-delay: 8s; 
 }
 
-/* カードがひらひらと回転しながら落ちる魔法 */
+/* カードが落ちる動き */
 @keyframes card-fall {
     0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.7; }
-    90% { opacity: 0.7; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
     100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
 }
 
-/* 3. ヘッダー（タイトル部分） */
+/* 3. ヘッダー */
 header {
     background: rgba(255, 255, 255, 0.15);
     text-align: center;
@@ -68,7 +70,7 @@ header {
 
 h1 { color: #8a6c22; font-size: 2.2rem; text-shadow: 0 0 15px #fff; }
 
-/* 4. メニューセクション（読みやすく半透明に） */
+/* 4. メニューセクション */
 section { max-width: 800px; margin: 30px auto; padding: 0 20px; position: relative; z-index: 10; }
 .menu-item {
     background: rgba(255, 255, 255, 0.5);
@@ -81,7 +83,7 @@ section { max-width: 800px; margin: 30px auto; padding: 0 20px; position: relati
 
 h2 { text-align: center; color: #8a6c22; border-bottom: 2px solid #8a6c22; padding-bottom: 10px; margin-bottom: 30px; }
 
-/* 5. 予約ボタン（一番目立つように） */
+/* 5. 予約ボタン */
 button { 
     display: block; width: 300px; max-width: 90%; margin: 40px auto; padding: 20px; 
     background: linear-gradient(45deg, #d4af37, #f9f1c0); color: #4a3410; 
